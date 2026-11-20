@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>PrimeTemp HVAC/R · Website Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0e;--char:#17181b;--panel:#212327;--line:#34373d;--gold:#d9a93a;--gold2:#f3cc66;--ink:#f5f2ea;--mute:#b9b4a8;--cream:#f4efe4;--dark:#141414}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.55 Barlow,-apple-system,Helvetica,Arial,sans-serif}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;margin:0;text-wrap:balance}
+h1{font-size:clamp(44px,8vw,92px);font-weight:800}
+h2{font-size:clamp(34px,5.4vw,60px);font-weight:800}
+h3{font-size:28px;font-weight:700}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.gold{color:var(--gold2)}
+.ribbon{background:var(--gold);color:#111;font-weight:600;font-size:16px;text-align:center;padding:9px 16px}
+.nav{position:sticky;top:0;z-index:30;background:rgba(13,13,14,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand{font:800 30px/1 "Barlow Condensed",sans-serif;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand b{color:var(--gold2)}
+.links{display:flex;gap:26px}
+.links a{color:var(--mute);text-decoration:none;font-weight:600;font-size:18px}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--gold);color:#111;font-weight:700;font-size:19px;padding:14px 24px;border-radius:6px;border:0;text-decoration:none;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.ghost:hover{border-color:var(--gold2);color:var(--gold2)}
+.btn:focus-visible,button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
+.hero{position:relative;min-height:640px;display:flex;align-items:flex-end;background:#000 url(img/32497161.jpg) center 30%/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.2) 100%),linear-gradient(0deg,rgba(13,13,14,1) 0%,rgba(13,13,14,0) 38%)}
+.hero .wrap{position:relative;padding-top:120px;padding-bottom:64px;width:100%}
+.hero p.lead{font-size:24px;max-width:600px;margin:20px 0 30px;color:#e9e4d8}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chips span{border:1px solid var(--line);background:rgba(0,0,0,.5);padding:7px 14px;border-radius:99px;font-size:16px;color:var(--mute)}
+section{padding:84px 0}
+.eyebrow{font-weight:700;color:var(--gold2);text-transform:uppercase;letter-spacing:.14em;font-size:15px;margin-bottom:12px}
+.sub{font-size:22px;color:var(--mute);max-width:680px;margin-top:16px}
+.pick{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--gold);color:var(--gold2);border-radius:99px;padding:6px 16px 6px 6px;font-weight:700;font-size:16px;margin-bottom:18px;background:rgba(217,169,58,.08)}
+.pick i{font-style:normal;background:var(--gold);color:#111;border-radius:99px;min-width:30px;height:30px;display:grid;place-items:center;font-size:16px;padding:0 8px}
+.light{background:var(--cream);color:var(--dark)}
+.light .sub{color:#55514a}
+.light .eyebrow{color:#8a6410}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.svc article{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.svc img{width:100%;height:230px;object-fit:cover}
+.svc div{padding:22px}
+.svc p{color:#4c4841;margin-top:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.two>*{min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+/* booking */
+.step{font-weight:700;font-size:17px;color:var(--mute);margin:20px 0 10px;text-transform:uppercase;letter-spacing:.08em}
+.step:first-child{margin-top:0}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{background:var(--char);color:var(--ink);border:2px solid var(--line);border-radius:8px;padding:12px 16px;font:600 18px Barlow,sans-serif;cursor:pointer;min-width:84px}
+.opt small{display:block;font-weight:500;color:var(--mute);font-size:15px}
+.opt[aria-pressed=true]{border-color:var(--gold);background:rgba(217,169,58,.16)}
+.opt[aria-pressed=true] small{color:var(--gold2)}
+#bookBtn{margin-top:24px;width:100%}
+#bookBtn:disabled{opacity:.4;cursor:not-allowed}
+.done{display:none;margin-top:22px;border-top:1px solid var(--line);padding-top:22px}
+.done.on{display:block}
+.done h3{color:var(--gold2)}
+.sms{background:#1f8a4c;color:#fff;border-radius:18px 18px 18px 4px;padding:14px 18px;margin-top:10px;max-width:420px;font-size:18px}
+.tiny{font-size:15px;color:var(--mute);margin-top:14px}
+/* phone call */
+.phone{width:min(360px,100%);margin:0 auto;background:#000;border:3px solid #3a3c42;border-radius:38px;padding:16px 14px 20px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.phone .top{text-align:center;color:var(--mute);font-size:15px;padding:6px 0 12px;border-bottom:1px solid #222}
+.phone .top b{display:block;color:var(--ink);font-size:19px}
+.thread{min-height:330px;padding:14px 4px 4px;display:flex;flex-direction:column;gap:10px}
+.b{max-width:86%;padding:11px 15px;border-radius:18px;font-size:17px;line-height:1.35;opacity:0;transform:translateY(8px);transition:.35s}
+.b.show{opacity:1;transform:none}
+.b.them{background:#2a2c31;align-self:flex-start;border-bottom-left-radius:5px}
+.b.us{background:var(--gold);color:#111;align-self:flex-end;border-bottom-right-radius:5px;font-weight:500}
+.b small{display:block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-bottom:2px}
+.b.note{align-self:stretch;max-width:100%;background:#12351f;border:1px solid #1f8a4c;color:#d9f5e3;border-radius:12px}
+.static .b{opacity:1;transform:none}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:20px;font-size:17px}
+.cmt .r{margin:10px 0 0 26px;padding-left:14px;border-left:3px solid var(--gold)}
+.cmt b{color:var(--gold2)}
+/* social */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:36px}
+.day{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-align:center;font-size:15px;color:var(--mute);padding-bottom:8px}
+.day b{display:block;color:var(--ink);padding:8px 0 6px;font-size:16px}
+.day img{width:100%;aspect-ratio:1;object-fit:cover}
+.day span{display:block;margin-top:6px;color:var(--gold2);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.post{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#000 center/cover;display:flex;align-items:flex-end}
+.post:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.25) 60%,rgba(0,0,0,.1) 100%)}
+.post div{position:relative;padding:18px}
+.post h3{font-size:clamp(22px,2.6vw,34px);font-weight:800}
+.post em{font-style:normal;display:block;font:700 14px Barlow,sans-serif;letter-spacing:.14em;color:var(--gold2);text-transform:uppercase;margin-bottom:6px}
+.post u{position:absolute;top:14px;left:16px;text-decoration:none;font:800 16px "Barlow Condensed",sans-serif;letter-spacing:.08em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.post u b{color:var(--gold2)}
+.caro{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;scrollbar-width:none;width:min(420px,100%);margin:0 auto}
+.caro::-webkit-scrollbar{display:none}
+.caro .post{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5}
+.caro .post h3{font-size:36px}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.dots button{width:14px;height:14px;border-radius:50%;border:0;background:#4a4d54;padding:0;cursor:pointer}
+.dots button.on{background:var(--gold2)}
+.reel{position:relative;width:min(330px,100%);aspect-ratio:9/16;margin:0 auto;border-radius:24px;overflow:hidden;border:3px solid #3a3c42;background:#000}
+.reel .f{position:absolute;inset:0;background:center/cover;opacity:0;transition:opacity .6s;transform:scale(1)}
+.reel .f.on{opacity:1;animation:zoom 3.4s linear forwards}
+@keyframes zoom{to{transform:scale(1.14)}}
+.reel:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,0) 45%)}
+.reel .tag{position:absolute;top:16px;left:16px;z-index:2;background:var(--gold);color:#111;font-weight:800;font-size:14px;letter-spacing:.1em;padding:4px 10px;border-radius:4px}
+.reel .cap{position:absolute;left:18px;right:18px;bottom:34px;z-index:2}
+.reel .cap small{display:block;color:var(--gold2);font-weight:700;font-size:15px}
+.reel .cap b{font:800 32px/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.reel .bar{position:absolute;left:14px;right:14px;bottom:14px;height:4px;background:rgba(255,255,255,.3);z-index:2;border-radius:4px;overflow:hidden}
+.reel .bar i{display:block;height:100%;width:0;background:#fff}
+/* ad */
+.ad{background:#fff;color:#1c1e21;border-radius:12px;overflow:hidden;max-width:440px;margin:0 auto;font-size:17px}
+.ad .hd{display:flex;gap:12px;align-items:center;padding:14px}
+.av{width:46px;height:46px;border-radius:50%;background:#111;color:var(--gold2);display:grid;place-items:center;font:800 19px "Barlow Condensed",sans-serif;flex:none}
+.ad .hd small{display:block;color:#65676b;font-size:14px}
+.ad p{padding:0 14px 12px}
+.ad img{width:100%;height:300px;object-fit:cover;object-position:center 30%}
+.ad .ft{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;background:#f0f2f5}
+.ad .ft b{font-size:18px}
+.ad .ft span{background:#e4e6eb;border-radius:6px;padding:9px 14px;font-weight:700;white-space:nowrap}
+.lead{margin-top:18px}
+.lead dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:12px 0 0;font-size:19px}
+.lead dt{color:var(--mute)}
+.lead dd{margin:0;font-weight:600}
+.band{background:var(--gold);color:#111;text-align:center}
+.band h2{max-width:900px;margin:0 auto}
+.band p{font-size:22px;max-width:640px;margin:16px auto 0;font-weight:500}
+footer{padding:44px 0 120px;color:var(--mute);font-size:16px;border-top:1px solid var(--line)}
+footer p+p{margin-top:8px}
+/* chat widget */
+#chatBtn{position:fixed;right:20px;bottom:20px;z-index:50;background:var(--gold);color:#111;border:0;border-radius:99px;padding:16px 24px;font:700 19px Barlow,sans-serif;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#chat{position:fixed;right:20px;bottom:20px;z-index:51;width:min(390px,calc(100vw - 24px));background:var(--char);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.6);display:none;flex-direction:column;overflow:hidden}
+#chat.on{display:flex}
+#chat header{background:var(--gold);color:#111;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:19px}
+#chat header small{display:block;font-weight:500;font-size:14px}
+#chat header button{background:none;border:0;font-size:30px;line-height:1;cursor:pointer;color:#111;padding:0 6px}
+#log{height:300px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+#log .b{opacity:1;transform:none}
+#quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 12px}
+#quick button{background:transparent;color:var(--gold2);border:1px solid var(--gold);border-radius:99px;padding:7px 13px;font:600 15px Barlow,sans-serif;cursor:pointer}
+#chat form{display:flex;border-top:1px solid var(--line)}
+#chat input{flex:1;min-width:0;background:transparent;border:0;color:var(--ink);font:400 18px Barlow,sans-serif;padding:16px}
+#chat form button{background:none;border:0;color:var(--gold2);font:700 18px Barlow,sans-serif;padding:0 18px;cursor:pointer}
+@media(max-width:860px){
+ .links{display:none}.two{grid-template-columns:1fr;gap:36px}.svc{grid-template-columns:1fr}
+ .week{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(2,1fr)}
+ section{padding:60px 0}.hero{min-height:560px}.nav .btn{padding:11px 16px;font-size:17px}.brand{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Mockup made for Freddy by Fix Your Brand. Photos, names and numbers are samples.</div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#top">Prime<b>Temp</b> HVAC/R</a>
+  <div class="links"><a href="#services">Services</a><a href="#book">Book</a><a href="#phones">Calls</a><a href="#social">Social</a><a href="#ads">Ads</a></div>
+  <a class="btn" href="#book">Book a visit</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <p class="eyebrow">Staten Island, NY</p>
+  <h1>Heat out? AC down?<br><span class="gold">PrimeTemp picks up.</span></h1>
+  <p class="lead">Heating, cooling and refrigeration for Staten Island homes and businesses. Book a visit in under a minute.</p>
+  <div class="cta"><a class="btn" href="#book">Book a visit</a><a class="btn ghost" href="#phones">Call (718) 555-0199</a></div>
+  <div class="chips"><span>Heating</span><span>Cooling</span><span>Refrigeration</span><span>Answered day and night</span></div>
+</div></header>
+
+<section class="light" id="services"><div class="wrap">
+  <p class="eyebrow">What we do</p>
+  <h2>Three trades. One call.</h2>
+  <p class="sub">This part of the site lists exactly what you work on, in your words.</p>
+  <div class="svc">
+    <article><img src="img/4819052.jpg" alt="A cast iron radiator under a window"><div><h3>Heating</h3><p>No heat, strange noises and tune-ups before the cold hits.</p></div></article>
+    <article><img src="img/38788452.jpg" alt="A wall-mounted air conditioner"><div><h3>Cooling</h3><p>AC repair, tune-ups and new systems when the old one is done.</p></div></article>
+    <article><img src="img/5498223.jpg" alt="Open freezer cases in a store"><div><h3>Refrigeration</h3><p>Coolers and freezers for stores, kitchens and restaurants.</p></div></article>
+  </div>
+</div></section>
+
+<section id="book"><div class="wrap two">
+  <div>
+    <span class="pick"><i>4</i>Automatic booking</span>
+    <h2>Customers book <span class="gold">themselves.</span></h2>
+    <p class="sub">They pick a time. It lands on your calendar. You get a text. No phone tag.</p>
+    <p class="sub">Try it. Tap a service, a day and a time.</p>
+  </div>
+  <div class="card">
+    <p class="step">1. What do you need?</p>
+    <div class="opts" id="oSvc"><button class="opt" aria-pressed="false">Service call</button><button class="opt" aria-pressed="false">Tune-up</button></div>
+    <p class="step">2. Pick a day</p>
+    <div class="opts" id="oDay"></div>
+    <p class="step">3. Pick a time</p>
+    <div class="opts" id="oTime"><button class="opt" aria-pressed="false">9:00 AM</button><button class="opt" aria-pressed="false">12:00 PM</button><button class="opt" aria-pressed="false">3:00 PM</button></div>
+    <button class="btn" id="bookBtn" disabled>Book it</button>
+    <div class="done" id="done" aria-live="polite">
+      <h3>You're booked.</h3>
+      <p id="doneLine"></p>
+      <p class="tiny">The text you get on your phone:</p>
+      <div class="sms" id="doneSms"></div>
+      <p class="tiny">This is a sample. Nothing was really booked.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="phones" style="background:var(--char)"><div class="wrap two">
+  <div>
+    <span class="pick"><i>3</i>Phone answering</span>
+    <h2>You're on a roof. <span class="gold">The phone still gets answered.</span></h2>
+    <p class="sub">A helper answers when you can't. It gets the name, the address and the problem. Then it texts you.</p>
+    <p style="margin-top:28px"><button class="btn" id="playCall">Play a sample call</button></p>
+  </div>
+  <div class="phone">
+    <div class="top">8:40 PM · incoming call<b>PrimeTemp HVAC/R</b></div>
+    <div class="thread" id="call" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<section id="dms"><div class="wrap two">
+  <div class="phone">
+    <div class="top">Instagram message<b>PrimeTemp HVAC/R</b></div>
+    <div class="thread static" style="min-height:0">
+      <div class="b them">Do you do AC tune-ups?</div>
+      <div class="b us">Yes. Want to get on the schedule before it gets hot?</div>
+      <div class="b them">Yes</div>
+      <div class="b us">Great. What's the best number? We'll set it up.</div>
+    </div>
+  </div>
+  <div>
+    <span class="pick"><i>2</i>Answers on Facebook and Instagram</span>
+    <h2>Every message gets <span class="gold">an answer.</span></h2>
+    <p class="sub">Messages and comments on your pages get a reply, day or night. It gets their number so you can close the job.</p>
+    <div class="cmt">
+      <p><b>Danielle S.</b> commented: My AC is making a loud noise.</p>
+      <p class="r"><b>PrimeTemp HVAC/R</b> Sorry to hear that. Send us a message and we'll get you on the schedule.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="social" class="light"><div class="wrap">
+  <span class="pick" style="border-color:#8a6410;color:#6d4f0c"><i>5</i>Automatic posting</span>
+  <h2>Your page stays busy. You stay on the tools.</h2>
+  <p class="sub">We load the posts. They go out on the same days every week. You see every one before it posts.</p>
+  <div class="week" id="week"></div>
+</div></section>
+
+<section id="posts"><div class="wrap">
+  <span class="pick"><i>6</i>30 days of posts</span>
+  <h2>A month of posts, <span class="gold">in your look.</span></h2>
+  <p class="sub">30 posts with the words written for you. Black and gold, with your real job photos once you send them.</p>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="swipe" style="background:var(--char)"><div class="wrap two">
+  <div>
+    <span class="pick"><i>7</i>30 days of swipe posts</span>
+    <h2>Swipe posts that <span class="gold">teach and sell.</span></h2>
+    <p class="sub">Tips, before and afters, and how it's done. People swipe through, then send you a message.</p>
+    <p class="sub">Swipe this one, or tap the dots.</p>
+  </div>
+  <div>
+    <div class="caro" id="caro" tabindex="0" aria-label="Sample swipe post"></div>
+    <div class="dots" id="dots"></div>
+  </div>
+</div></section>
+
+<section id="reels"><div class="wrap two">
+  <div class="reel" id="reel">
+    <span class="tag">REEL</span>
+    <div class="cap"><small>PrimeTemp HVAC/R</small><b id="reelCap"></b></div>
+    <div class="bar"><i id="reelBar"></i></div>
+  </div>
+  <div>
+    <span class="pick"><i>8</i>Short videos (Reels)</span>
+    <h2>Short videos of <span class="gold">real jobs.</span></h2>
+    <p class="sub">You film a few seconds on the job with your phone. We cut it, add the words and post it to Facebook and Instagram.</p>
+    <p class="sub">This sample is made from photos. Yours will be your own jobs.</p>
+  </div>
+</div></section>
+
+<section id="ads" style="background:var(--char)"><div class="wrap two">
+  <div>
+    <span class="pick"><i>9</i>Facebook and Instagram ads</span>
+    <h2>Get in front of people who <span class="gold">need you today.</span></h2>
+    <p class="sub">We write and design the ads. You approve each one. You set the budget, and it goes to Facebook, not to us.</p>
+    <div class="card lead">
+      <p class="eyebrow" style="margin:0">New customer from this ad</p>
+      <dl><dt>Name</dt><dd>Maria R.</dd><dt>Needs</dt><dd>No heat</dd><dt>Area</dt><dd>Staten Island</dd><dt>Phone</dt><dd>(718) 555-0142</dd></dl>
+      <p class="tiny">Sent to your phone the second they fill it in.</p>
+    </div>
+  </div>
+  <div class="ad">
+    <div class="hd"><span class="av">PT</span><div><b>PrimeTemp HVAC/R</b><small>Sponsored</small></div></div>
+    <p>No heat tonight? We're in Staten Island and we pick up.</p>
+    <img src="img/32206234.jpg" alt="A family warm at home on a couch">
+    <div class="ft"><b>No heat? No AC? Call PrimeTemp.</b><span>Call now</span></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="pick" style="border-color:#111;color:#111;background:rgba(0,0,0,.08)"><i style="background:#111;color:var(--gold2)">1</i>Chat on the website</span>
+  <h2>One more. Tap the chat button and ask it something.</h2>
+  <p>It's in the bottom corner of this page. Pretend you're a customer with no heat.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b style="color:var(--ink)">This is a mockup.</b> It shows what your website and your pages could look like. Nothing here is live.</p>
+  <p>Photos are licensed samples until we have PrimeTemp's own job photos. Customer names, messages, times and phone numbers are made up.</p>
+  <p>Made for Freddy by Scott at Fix Your Brand.</p>
+</div></footer>
+
+<button id="chatBtn" aria-controls="chat">Chat with us</button>
+<div id="chat" role="dialog" aria-label="Chat with PrimeTemp">
+  <header><div>PrimeTemp HVAC/R<small>Pick 1: chat on the website</small></div><button id="chatX" aria-label="Close chat">&times;</button></header>
+  <div id="log" aria-live="polite"></div>
+  <div id="quick"></div>
+  <form id="chatForm"><input id="chatIn" placeholder="Type a question" aria-label="Type a question" autocomplete="off"><button>Send</button></form>
+</div>
+
+<script>
+const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+
+/* booking */
+const pick={};
+const dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+(()=>{const d=new Date();let n=0;while(n<5){d.setDate(d.getDate()+1);if(d.getDay()%6===0)continue;
+  const b=el('button','opt',dn[d.getDay()]+'<small>'+mn[d.getMonth()]+' '+d.getDate()+'</small>');b.dataset.v=dn[d.getDay()]+', '+mn[d.getMonth()]+' '+d.getDate();b.setAttribute('aria-pressed','false');$('#oDay').append(b);n++}})();
+[['#oSvc','svc'],['#oDay','day'],['#oTime','time']].forEach(([id,k])=>$(id).addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;
+  $(id).querySelectorAll('.opt').forEach(o=>o.setAttribute('aria-pressed',o===b));pick[k]=b.dataset.v||b.textContent;$('#bookBtn').disabled=!(pick.svc&&pick.day&&pick.time);$('#done').classList.remove('on')}));
+$('#bookBtn').addEventListener('click',()=>{$('#doneLine').textContent=pick.svc+' on '+pick.day+' at '+pick.time+'.';
+  $('#doneSms').textContent='New booking: '+pick.svc+', '+pick.day+' at '+pick.time+'. Maria R., (718) 555-0142.';$('#done').classList.add('on')});
+
+/* sample call */
+const callLines=[['us','Helper','Thanks for calling PrimeTemp HVAC/R. How can I help?'],['them','Caller','My heat just went out and I have a baby in the house.'],['us','Helper',"I'm sorry. I'm getting this to Freddy right now. What's the address and a good number?"],['them','Caller','112 Sample Street. 718-555-0142.'],['us','Helper','Got it. Freddy will call you right back.'],['note','Texted to Freddy · 8:41 PM','No heat, baby in the house. 112 Sample St. 718-555-0142. Call back now.']];
+let callT=[];
+function playCall(){callT.forEach(clearTimeout);callT=[];const c=$('#call');c.innerHTML='';
+  callLines.forEach((l,i)=>{const b=el('div','b '+l[0],'<small>'+l[1]+'</small>'+l[2]);c.append(b);callT.push(setTimeout(()=>b.classList.add('show'),150+i*1500))})}
+$('#playCall').addEventListener('click',playCall);
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){playCall();o.disconnect()}},{threshold:.5}).observe($('#call'));
+
+/* week */
+['4819052','6471913','5498223','38788452','5463587','20046692','5463575'].forEach((p,i)=>{
+  $('#week').append(el('div','day','<b>'+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][i]+'</b><img src="img/'+p+'.jpg" alt=""><span>9:00 AM</span>'))});
+
+/* posts */
+const tile=(p,em,h)=>{const d=el('div','post','<u>PRIME<b>TEMP</b></u><div><em>'+em+'</em><h3>'+h+'</h3></div>');d.style.backgroundImage='url(img/'+p+'.jpg)';return d};
+[['4819052','Heating','No heat? Call PrimeTemp.'],['6471913','Tune-ups','Tune-up season is here.'],['5498223','Refrigeration','Cooler down? We fix it.'],['38788452','Tip','Change your filter. Your AC will thank you.'],['5463587','On the job','On the roof so your kitchen stays open.'],['17070274','Staten Island','Your local heating and cooling crew.']].forEach(a=>$('#grid').append(tile(...a)));
+
+/* carousel */
+const slides=[['5463575','Swipe','Is your AC ready for summer?'],['38788452','1 of 2','Change the filter.'],['20046692','2 of 2','Clear the space around the outdoor unit.'],['32497161','PrimeTemp HVAC/R','Want it checked? Send us a message.']];
+const caro=$('#caro');
+slides.forEach((s,i)=>{caro.append(tile(...s));const b=el('button',i?'':'on');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=()=>caro.scrollTo({left:i*(caro.clientWidth+14),behavior:'smooth'});$('#dots').append(b)});
+caro.addEventListener('scroll',()=>{const i=Math.round(caro.scrollLeft/(caro.clientWidth+14));[...$('#dots').children].forEach((d,j)=>d.classList.toggle('on',i===j))});
+
+/* reel */
+const rf=[['6471912','A tune-up, start to finish'],['6471911','Check the pressures'],['6471914','Done. Cool air is back.']];
+const frames=rf.map(r=>{const f=el('div','f');f.style.backgroundImage='url(img/'+r[0]+'.jpg)';$('#reel').prepend(f);return f});
+let ri=-1,rt=0;
+function reelStep(){ri=(ri+1)%rf.length;frames.forEach((f,j)=>f.classList.toggle('on',j===ri));$('#reelCap').textContent=rf[ri][1]}
+reelStep();
+setInterval(()=>{rt+=100;$('#reelBar').style.width=(rt%3400)/34+'%';if(rt%3400===0)reelStep()},100);
+
+/* chat */
+const rules=[
+ ['price|cost|how much|charge|fee|quote|estimate',"I can't give a price in chat. Freddy looks at the job first so the number is right. Want me to set up a visit?"],
+ ['fridge|cooler|freezer|refriger|ice|walk-in|walk in',"Yes, PrimeTemp works on refrigeration. What kind of unit is it, and is it down right now?"],
+ ['no heat|heat|furnace|boiler|cold|radiator',"Sorry about that. I can get this to Freddy right now. What's the address and a good number?"],
+ ['ac|a/c|air|cool|warm|hot',"Sorry about that. Want a tech to come take a look? Give me your name and number and I'll set it up."],
+ ['book|appointment|schedule|come out|visit|tune',"Sure. Give me your name and number and the day that works, or tap Book a visit at the top of the page."],
+ ['where|area|staten|brooklyn|jersey|serve',"PrimeTemp is based in Staten Island. Tell me your town and I'll check with Freddy."],
+ ['hour|open|night|weekend|emergency',"I answer here day and night. For an emergency, give me your address and number and I'll get it to Freddy right away."],
+ ['[0-9]{3}.?[0-9]{4}',"Got it, thank you. Freddy will reach out shortly."],
+ ['thank',"You're welcome. Anything else I can help with?"]];
+const log=$('#log');
+function say(cls,t){const b=el('div','b '+cls);b.textContent=t;log.append(b);log.scrollTop=log.scrollHeight}
+function ask(q){if(!q.trim())return;say('them',q);$('#quick').innerHTML='';const s=q.toLowerCase();
+  const r=rules.find(r=>new RegExp('(^|[^a-z])('+r[0]+')').test(s));
+  setTimeout(()=>say('us',r?r[1]:"Got it. Can I get your name and number so Freddy can get back to you?"),600)}
+function openChat(){$('#chat').classList.add('on');$('#chatBtn').style.display='none';
+  if(!log.children.length){say('us',"Hi, this is PrimeTemp's helper. What's going on with your heat, AC or cooler?");
+   ['My heat is out','My AC is blowing warm','How much is a service call?','Do you fix walk-in coolers?'].forEach(q=>{const b=el('button');b.textContent=q;b.onclick=()=>ask(q);$('#quick').append(b)})}
+  $('#chatIn').focus({preventScroll:true})}
+$('#chatBtn').onclick=openChat;
+$('#chatX').onclick=()=>{$('#chat').classList.remove('on');$('#chatBtn').style.display=''};
+$('#chatForm').onsubmit=e=>{e.preventDefault();ask($('#chatIn').value);$('#chatIn').value=''};
+</script>
+</body>
+</html>
